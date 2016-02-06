@@ -1,0 +1,22 @@
+<section class="main-section home">
+  <section>
+    <h3>Updates</h3>
+    <ul class="collapsible" data-collapsible="accordion">
+      <li blog-li blog='blog' ng-repeat='blog in blogs'></li>
+    </ul>
+  </section>
+  <section>
+    <h3>Coffee Shops</h3>
+    <div class="home-key">
+      <div class="chip green lighten-1">Expresso</div>
+      <div class="chip light-blue lighten-1">Speciality</div>
+      <div class="chip teal lighten-1">drip</div>
+      <div class="chip blue lighten-1">roaster</div>
+      <div class="chip indigo lighten-1">tea</div>
+      <div class="chip cyan lighten-1">food</div>
+    </div>
+    <ul class="collapsible" data-collapsible="accordion">
+      <li shop-li shop='shop' ng-repeat="shop in shops"></li>
+    </ul>
+  </section>
+</section>

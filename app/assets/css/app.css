@@ -1,0 +1,169 @@
+/*map*/
+
+#map {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  filter: blur(10px);
+  -webkit-filter: blur(10px);
+  /*transition: all .75s;*/
+}
+
+body.active-map #map {
+  filter: blur(0);
+  -webkit-filter: blur(0);
+  z-index: 10;
+}
+
+.map-controls {
+  left: 4em;
+  position: fixed;
+  width: 15em;
+  top: -40em;
+  z-index: 10;
+}
+
+.map-controls a {
+  width: 100%;
+}
+
+.map-controls p {
+  padding: 1.5rem 2rem;
+}
+
+.map-controls .collapsible {
+  margin: 0;
+}
+
+.open {
+  display: block !important;
+}
+
+.close {
+  display: none !important;
+}
+
+body.active-map .navbar-fixed .open {
+  display: none !important;
+}
+
+body.active-map .navbar-fixed .close {
+  display: block !important;
+}
+
+body.active-map .map-controls {
+  top: 5em !important;
+}
+
+body.active-map .leaflet-top {
+  top: 5.3em;
+}
+
+/*app*/
+
+@media only screen and (max-width: 992px) {
+  nav .brand-logo {
+    left: auto;
+    -webkit-transform: translateX(0);
+     transform: translateX(0);
+  }
+}
+
+nav li {
+  cursor: pointer;
+}
+
+
+.main-section {
+  padding: 3em 0;
+  opacity: 1;
+  /*transition: all .75s;*/
+}
+
+body.active-map .main-section {
+  opacity: 0;
+  z-index: -10;
+}
+
+.main-section section + section {
+  margin-top: 6em;
+}
+
+.main-section.shop .card {
+  margin-top: 2em;
+}
+
+.card .card-content p + p {
+  padding-top: 1em;
+}
+
+.collapsible-body {
+  background-color: #F7F7F7;
+}
+
+.collapsible-header {
+  position: relative;
+}
+
+.collapsible-body p + p {
+  padding-top: 0;
+}
+
+.collapsible-body .final-action {
+  padding-top: 0;
+}
+
+.expresso-icon, .roaster-icon, .drip-icon, .speciality-icon, .tea-icon, .food-icon {
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  /* top: .4em; */
+  position: relative;
+  text-align: center;
+  line-height: 1.6;
+  color: #fff;
+}
+
+.published {
+  color: rgba(0,0,0,0.57);
+  font-size: 12.5px;
+}
+
+.card-details {
+  margin-bottom: 20px;
+}
+
+.card-buttons {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+
+.author {
+  padding-bottom: 0 !important;
+  color: rgba(0,0,0,0.57);
+}
+
+.home-key {
+  margin: 1em 0;
+}
+
+.home-key .chip {
+  color: #fff;
+}
+
+.shop .row .s6 {
+  width: 49%;
+}
+
+.shop .row {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.shop .row .s6 + .s6 {
+  margin-left: 2%;
+}

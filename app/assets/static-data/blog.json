@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "headline": "Hello Coffee Drinkers",
+    "published": "February 4th, 2015",
+    "body": "<p>Hello world. You're here because you're into coffee and you live in the Oklahoma City area. I want this app to help you search, discover and enjoy our local coffee and tea shops.</p><p>To get started, the cafes are listed below. Click to expand the info and then even more information is found on each shop's page. I created a map which will help you locate your favorite cafes and some others you've never heard about.</p><p>For now, you'll be able to favorite and save locations. I have many features planned and will be implementing them as time goes on. I would love for you to contribute to this app in any way you wish. From knowledge about the cafes to contributing to the open source project. Any and all input is welcome. Thanks!</p>",
+    "icon": "blah",
+    "author": "DarrenJaws"
+  },
+  {
+    "id": 1,
+    "headline": "Second Blog Headline",
+    "published": "February 6th, 2015",
+    "body": "<p>Molestiae consectetur odit non at nam, numquam et itaque nisi voluptatum mollitia beatae voluptatem porro animi repellendus unde cupiditate neque. Dignissimos tempora nobis tenetur facilis, quisquam repellat deserunt, fuga nemo vitae in fugiat ipsam possimus. Accusantium maxime voluptatem eaque vel porro placeat quae nulla praesentium reiciendis aspernatur, blanditiis illum ratione fugit quidem accusamus modi sit doloremque nihil dignissimos ad illo, harum sunt. Debitis accusantium atque hic nesciunt quo voluptate, alias illum autem!</p>",
+    "icon": "blah",
+    "author": "DarrenJaws"
+  }
+]
