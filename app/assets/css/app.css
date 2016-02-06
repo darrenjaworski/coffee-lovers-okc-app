@@ -167,3 +167,21 @@ body.active-map .main-section {
 .shop .row .s6 + .s6 {
   margin-left: 2%;
 }
+
+@media (max-width: 45em) {
+  .chip {
+    margin: 5px 0;
+  }
+  .shop .row .s6 {
+    width: 100%;
+  }
+  .shop .row .s6 + .s6 {
+    margin-left: 0%;
+  }
+  .collection.with-header .collection-item, .collection.with-header .collection-header {
+    padding: 10px 15px;
+  }
+  .row {
+    margin-bottom: 0;
+  }
+}
