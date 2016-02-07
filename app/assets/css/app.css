@@ -127,6 +127,18 @@ body.active-map .main-section {
   color: #fff;
 }
 
+@media (max-width: 45em) {
+  .shop-title {
+    display: inline-block;
+    max-width: 50%;
+    line-height: 1.5rem;
+    margin-top: .5rem;
+  }
+  .expresso-icon, .roaster-icon, .drip-icon, .speciality-icon, .tea-icon, .food-icon {
+    font-size: 10px;
+  }
+}
+
 .published {
   color: rgba(0,0,0,0.57);
   font-size: 12.5px;
