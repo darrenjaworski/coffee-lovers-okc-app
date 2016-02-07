@@ -181,6 +181,9 @@ body.active-map .main-section {
 }
 
 @media (max-width: 45em) {
+  .btn + .btn {
+    margin-top: 5px;
+  }
   .chip {
     margin: 5px 0;
   }
