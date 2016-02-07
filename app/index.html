@@ -46,9 +46,9 @@
     <div ng-view></div>
   </div>
 
-  <div class="map-container">
+  <div class="map-container" ng-controller="MapCtrl">
     <map-leaflet id="map"></map-leaflet>
-    <div class="map-controls z-depth-2" ng-controller="MapCtrl">
+    <div class="map-controls z-depth-2">
       <form>
       <ul class="collapsible" data-collapsible="accordion">
         <li>

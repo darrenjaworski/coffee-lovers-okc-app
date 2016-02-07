@@ -45,7 +45,8 @@ angular.module('okcCoffee.map.map-directive', [])
       response.forEach( function(d){
 
         sortShop(d)
-        layerGroups.ids[d.id] = new L.marker( [ d['location_lat'], d['location_long'] ] ).bindPopup(d['name']);
+        var popup = '<h5>'+d['name']+'</h5><p>'+ d['location_street'] +'</p>';
+        layerGroups.ids[d.id] = new L.marker( [ d['location_lat'], d['location_long'] ] ).bindPopup(popup);
         layerGroups.all.addLayer( layerGroups.ids[d.id] );
         map.addLayer(layerGroups.all);
 
@@ -91,35 +92,38 @@ angular.module('okcCoffee.map.map-directive', [])
     // parameter is shop
     function sortShop(shop) {
 
+      var popup = '<h5>'+shop['name']+'</h5><p>'+ shop['location_street'] +'</p>';
+      var shopMarker = new L.marker( [ shop['location_lat'], shop['location_long'] ] ).bindPopup(popup);
+
       if (shop.expresso) {
-        layerGroups.expresso.addLayer( L.marker( [ shop['location_lat'], shop['location_long'] ] ).bindPopup(shop['name']) );
+        layerGroups.expresso.addLayer( shopMarker );
       }
       if (shop.drip) {
-        layerGroups.drip.addLayer( L.marker( [ shop['location_lat'], shop['location_long'] ] ).bindPopup(shop['name']) );
+        layerGroups.drip.addLayer( shopMarker );
       }
       if (shop.roaster) {
-        layerGroups.roaster.addLayer( L.marker( [ shop['location_lat'], shop['location_long'] ] ).bindPopup(shop['name']) );
+        layerGroups.roaster.addLayer( shopMarker );
       }
       if (shop.speciality) {
-        layerGroups.speciality.addLayer( L.marker( [ shop['location_lat'], shop['location_long'] ] ).bindPopup(shop['name']) );
+        layerGroups.speciality.addLayer( shopMarker );
       }
       if (shop.food) {
-        layerGroups.food.addLayer( L.marker( [ shop['location_lat'], shop['location_long'] ] ).bindPopup(shop['name']) );
+        layerGroups.food.addLayer( shopMarker );
       }
       if (shop.tea) {
-        layerGroups.tea.addLayer( L.marker( [ shop['location_lat'], shop['location_long'] ] ).bindPopup(shop['name']) );
+        layerGroups.tea.addLayer( shopMarker );
       }
       if (shop.study_hall) {
-        layerGroups.study_hall.addLayer( L.marker( [ shop['location_lat'], shop['location_long'] ] ).bindPopup(shop['name']) );
+        layerGroups.study_hall.addLayer( shopMarker );
       }
       if (shop.noisey) {
-        layerGroups.noisey.addLayer( L.marker( [ shop['location_lat'], shop['location_long'] ] ).bindPopup(shop['name']) );
+        layerGroups.noisey.addLayer( shopMarker );
       }
       if (shop.casual) {
-        layerGroups.casual.addLayer( L.marker( [ shop['location_lat'], shop['location_long'] ] ).bindPopup(shop['name']) );
+        layerGroups.casual.addLayer( shopMarker );
       }
       if (shop.hipster) {
-        layerGroups.hipster.addLayer( L.marker( [ shop['location_lat'], shop['location_long'] ] ).bindPopup(shop['name']) );
+        layerGroups.hipster.addLayer( shopMarker );
       }
 
     };
