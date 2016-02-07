@@ -67,7 +67,7 @@ angular.module('okcCoffee.map.map-directive', [])
     });
 
     scope.$on('zoomMap', function(event) {
-      map.panTo( new L.LatLng(35.467560, -97.516428) ).setZoom(12);
+      map.panTo( [35.467560, -97.516428] ).setZoom(12);
     })
 
     scope.$on('resetMap', function(event) {
