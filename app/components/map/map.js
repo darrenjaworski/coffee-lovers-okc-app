@@ -13,8 +13,7 @@ angular.module('okcCoffee.map', [
     $scope.$emit('zoomMap');
   };
   $scope.showAll = function(){
-    // var inputs = $('.map-controls input');
-    // console.log(inputs);
+    $('.map-controls input').prop('checked', false);
     $scope.$emit('resetMap');
   };
 }])
