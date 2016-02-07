@@ -9,7 +9,8 @@ angular.module('okcCoffee', [
   'okcCoffee.blog',
   'okcCoffee.home',
   'okcCoffee.map'
-]).
-config(['$routeProvider', function($routeProvider) {
+])
+
+.config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/'});
 }]);
