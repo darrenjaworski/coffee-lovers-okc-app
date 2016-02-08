@@ -175,6 +175,14 @@ body.active-map .main-section {
   color: #fff;
 }
 
+.home-key i {
+  cursor: pointer;
+}
+
+.home-key i.active {
+  color: #1976D2;
+}
+
 .shop .row .s6 {
   width: 49%;
 }
