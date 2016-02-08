@@ -18,8 +18,8 @@
   <p>
     <a class="waves-effect waves-light btn" ng-click="centerMap(shop.id)">{{shop.location_street}} <i class="material-icons right">place</i></a>
     <a class="waves-effect waves-light btn">
-      <i ng-if='!shop.expresso' class="material-icons">favorite</i>
-      <i ng-if='shop.expresso' class="material-icons">favorite_border</i>
+      <i ng-if='!shop.expresso' ng-click='favorite(shop.id)' class="material-icons">favorite</i>
+      <i ng-if='shop.expresso' ng-click='favorite(shop.id)' class="material-icons">favorite_border</i>
     </a>
   </p>
   <p><a href="#/shop/{{shop.id}}" class="btn-floating btn-large waves-effect waves-light blue"><i class="material-icons">arrow_forward</i></a></p>

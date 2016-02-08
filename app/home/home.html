@@ -8,15 +8,27 @@
   <section>
     <h3>Coffee Shops</h3>
     <div class="home-key">
-      <div class="chip green lighten-1">Expresso</div>
-      <div class="chip light-blue lighten-1">Speciality</div>
-      <div class="chip teal lighten-1">drip</div>
-      <div class="chip blue lighten-1">roaster</div>
-      <div class="chip indigo lighten-1">tea</div>
-      <div class="chip cyan lighten-1">food</div>
+      <div class="row">
+        <div class="col s12">
+          <i class="material-icons left" ng-click="filterProp = ''">filter_list</i>
+          <div class="chip green lighten-1" ng-click="filterProp = 'expresso'">Expresso</div>
+          <div class="chip light-blue lighten-1" ng-click="filterProp = 'speciality'">Speciality</div>
+          <div class="chip teal lighten-1" ng-click="filterProp = 'drip'">drip</div>
+          <div class="chip blue lighten-1" ng-click="filterProp = 'roaster'">roaster</div>
+          <div class="chip indigo lighten-1" ng-click="filterProp = 'tea'">tea</div>
+          <div class="chip cyan lighten-1" ng-click="filterProp = 'food'">food</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12">
+          <i class="material-icons left" ng-click="sortProp = 'name'; sortReverse = false">sort</i>
+          <i class="material-icons" ng-click="sortProp = 'name'; sortReverse = !sortReverse">sort_by_alpha</i>
+          <i class="material-icons" ng-click="sortProp = 'expresso'; sortReverse = !sortReverse">favorite</i>
+        </div>
+      </div>
     </div>
     <ul class="collapsible" data-collapsible="accordion">
-      <li shop-li shop='shop' ng-repeat="shop in shops"></li>
+      <li shop-li shop='shop' ng-repeat="shop in shops | filter: { qualities: filterProp } | orderBy:sortProp:sortReverse"></li>
     </ul>
   </section>
 </section>
