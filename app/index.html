@@ -46,9 +46,9 @@
     <div ng-view></div>
   </div>
 
-  <div class="map-container" ng-controller="MapCtrl">
+  <div class="map-container">
     <map-leaflet id="map"></map-leaflet>
-    <div class="map-controls z-depth-2">
+    <div class="map-controls z-depth-2" ng-controller="MapCtrl">
       <form>
       <ul class="collapsible" data-collapsible="accordion">
         <li>
@@ -126,6 +126,7 @@
   <script src="bower_components/angular/angular.min.js"></script>
   <script src="bower_components/angular-route/angular-route.min.js"></script>
   <script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+  <script src="bower_components/angular-cookies/angular-cookies.min.js"></script>
 
   <script src="app.js"></script>
   <script src="navigation/navigation.js"></script>
