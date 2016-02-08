@@ -199,9 +199,10 @@ body.active-map .main-section {
 @media (max-width: 45em) {
   .btn + .btn {
     margin-top: 5px;
+    margin-right: 24px;
   }
   .chip {
-    margin: 5px 0;
+    margin: 2px 0;
   }
   .shop .row .s6 {
     width: 100%;
@@ -214,5 +215,8 @@ body.active-map .main-section {
   }
   .row {
     margin-bottom: 0;
+  }
+  .row + .row {
+    padding-top: 1.5rem;
   }
 }
