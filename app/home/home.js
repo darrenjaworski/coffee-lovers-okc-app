@@ -39,7 +39,6 @@ angular.module('okcCoffee.home', ['ngRoute', 'ngSanitize'])
         d.qualities.push('food')
       }
     })
-    console.log( $scope.shops );
   });
   $http.get('./../assets/static-data/blog.json').then(function(response) {
     $scope.blogs = response.data;
@@ -47,7 +46,7 @@ angular.module('okcCoffee.home', ['ngRoute', 'ngSanitize'])
 
 }])
 
-.directive('shopLi', function($cookies){
+.directive('shopLi', function(){
   function link($scope, el, attrs){
 
     if ($scope.$parent.$last){
@@ -57,26 +56,26 @@ angular.module('okcCoffee.home', ['ngRoute', 'ngSanitize'])
 
   }
 
-  function controller($scope, $cookies) {
+  function controller($scope) {
 
-    $scope.centerMap = function(id){
-      $scope.$emit('centerMap', id - 1);
-      $('body').toggleClass('active-map');
-    };
-
-    $scope.favorite = function(id) {
-      var favoritesArray = $cookies.get('favorites');
-      console.log(favoritesArray)
-      if ( favoritesArray.indexOf(id) !== -1 ) {
-        console.log('need to remove from array');
-        favoritesArray.splice( favoritesArray.indexOf(id) )
-        console.log(favoritesArray);
-      } else {
-        console.log('need to add to array')
-        console.log(favoritesArray)
-        favoritesArray.push(id)
-      }
-    };
+    // $scope.centerMap = function(id){
+    //   $scope.$emit('centerMap', id - 1);
+    //   $('body').toggleClass('active-map');
+    // };
+    //
+    // $scope.favorite = function(id) {
+    //   var favoritesArray = $cookies.get('favorites');
+    //   console.log(favoritesArray)
+    //   if ( favoritesArray.indexOf(id) !== -1 ) {
+    //     console.log('need to remove from array');
+    //     favoritesArray.splice( favoritesArray.indexOf(id) )
+    //     console.log(favoritesArray);
+    //   } else {
+    //     console.log('need to add to array')
+    //     console.log(favoritesArray)
+    //     favoritesArray.push(id)
+    //   }
+    // };
   }
 
   return {
