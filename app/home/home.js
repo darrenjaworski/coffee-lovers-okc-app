@@ -58,11 +58,11 @@ angular.module('okcCoffee.home', ['ngRoute', 'ngSanitize'])
 
   function controller($scope) {
 
-    // $scope.centerMap = function(id){
-    //   $scope.$emit('centerMap', id - 1);
-    //   $('body').toggleClass('active-map');
-    // };
-    //
+    $scope.centerMap = function(id){
+      $scope.$emit('centerMap', id - 1);
+      $('body').toggleClass('active-map');
+    };
+    
     // $scope.favorite = function(id) {
     //   var favoritesArray = $cookies.get('favorites');
     //   console.log(favoritesArray)
