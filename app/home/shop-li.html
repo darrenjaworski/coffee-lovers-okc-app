@@ -1,11 +1,11 @@
 <div class="collapsible-header">
   <div class="left">
-    <i ng-if='shop.expresso' class="material-icons">favorite</i>
-    <i ng-if='!shop.expresso' class="material-icons">favorite_border</i>
+    <i ng-if='shop.espresso' class="material-icons">favorite</i>
+    <i ng-if='!shop.espresso' class="material-icons">favorite_border</i>
   </div>
   <span class="shop-title">{{shop.name}}</span>
   <div class="right">
-    <span ng-if='shop.expresso' class="expresso-icon green lighten-1 tooltipped" data-position="top" data-delay="50" data-tooltip="Expresso">E</span>
+    <span ng-if='shop.espresso' class="espresso-icon green lighten-1 tooltipped" data-position="top" data-delay="50" data-tooltip="espresso">E</span>
     <span ng-if='shop.speciality' class="speciality-icon light-blue lighten-1 tooltipped" data-position="top" data-delay="50" data-tooltip="Speciality">S</span>
     <span ng-if='shop.drip' class="drip-icon teal lighten-1 tooltipped" data-position="top" data-delay="50" data-tooltip="Drip">D</span>
     <span ng-if='shop.roaster' class="roaster-icon blue lighten-1 tooltipped" data-position="top" data-delay="50" data-tooltip="Roaster">R</span>
@@ -18,8 +18,8 @@
   <p>
     <a class="waves-effect waves-light btn" ng-click="centerMap(shop.id)">{{shop.location_street}} <i class="material-icons right">place</i></a>
     <a class="waves-effect waves-light btn">
-      <i ng-if='!shop.expresso' ng-click='favorite(shop.id)' class="material-icons">favorite</i>
-      <i ng-if='shop.expresso' ng-click='favorite(shop.id)' class="material-icons">favorite_border</i>
+      <i ng-if='!shop.espresso' ng-click='favorite(shop.id)' class="material-icons">favorite</i>
+      <i ng-if='shop.espresso' ng-click='favorite(shop.id)' class="material-icons">favorite_border</i>
     </a>
   </p>
   <p><a href="#/shop/{{shop.id}}" class="btn-floating btn-large waves-effect waves-light blue"><i class="material-icons">arrow_forward</i></a></p>

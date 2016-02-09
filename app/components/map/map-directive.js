@@ -28,7 +28,7 @@ angular.module('okcCoffee.map.map-directive', [])
     var layerGroups = {
       ids: {},
       all : new L.layerGroup(),
-      expresso : new L.layerGroup(),
+      espresso : new L.layerGroup(),
       drip : new L.layerGroup(),
       roaster : new L.layerGroup(),
       speciality : new L.layerGroup(),
@@ -95,8 +95,8 @@ angular.module('okcCoffee.map.map-directive', [])
       var popup = '<h5>'+shop['name']+'</h5><p>'+ shop['location_street'] +'</p>';
       var shopMarker = new L.marker( [ shop['location_lat'], shop['location_long'] ] ).bindPopup(popup);
 
-      if (shop.expresso) {
-        layerGroups.expresso.addLayer( shopMarker );
+      if (shop.espresso) {
+        layerGroups.espresso.addLayer( shopMarker );
       }
       if (shop.drip) {
         layerGroups.drip.addLayer( shopMarker );

@@ -20,8 +20,8 @@ angular.module('okcCoffee.home', ['ngRoute', 'ngSanitize'])
     $scope.shops = response.data;
     $scope.shops.forEach(function(d){
       d.qualities = [];
-      if (d.expresso) {
-        d.qualities.push('expresso')
+      if (d.espresso) {
+        d.qualities.push('espresso')
       }
       if (d.speciality) {
         d.qualities.push('speciality')
@@ -62,7 +62,7 @@ angular.module('okcCoffee.home', ['ngRoute', 'ngSanitize'])
       $scope.$emit('centerMap', id - 1);
       $('body').toggleClass('active-map');
     };
-    
+
     // $scope.favorite = function(id) {
     //   var favoritesArray = $cookies.get('favorites');
     //   console.log(favoritesArray)
