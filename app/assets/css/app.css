@@ -128,7 +128,8 @@ body.active-map .main-section {
   display: inline-block;
   width: 1.5em;
   height: 1.5em;
-  /* top: .4em; */
+  border-radius: 50%;
+   top: .2em; 
   position: relative;
   text-align: center;
   line-height: 1.6;
