@@ -44,6 +44,7 @@ angular.module('okcCoffee.home', ['ngRoute', 'ngSanitize'])
     $scope.blogs = response.data;
   });
 
+
 }])
 
 .directive('shopLi', function(){
@@ -51,7 +52,6 @@ angular.module('okcCoffee.home', ['ngRoute', 'ngSanitize'])
 
     if ($scope.$parent.$last){
       $('.collapsible').collapsible();
-      $('.tooltipped').tooltip({delay: 50});
     }
 
   }
