@@ -17,7 +17,7 @@
 <div class="collapsible-body">
   <p>{{shop.short_description}}</p>
   <p>
-    <a class="waves-effect waves-light btn" ng-click="centerMap(shop.id)">{{shop.location_street}} <i class="material-icons right">place</i></a>
+    <a ng-if="shop.location_street !== 'null'" class="waves-effect waves-light btn" ng-click="centerMap(shop.id)">{{shop.location_street}} <i class="material-icons right">place</i></a>
     <a class="waves-effect waves-light btn">
       <i ng-if='!shop.espresso' ng-click='favorite(shop.id)' class="material-icons">favorite</i>
       <i ng-if='shop.espresso' ng-click='favorite(shop.id)' class="material-icons">favorite_border</i>
