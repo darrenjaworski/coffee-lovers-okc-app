@@ -13,13 +13,15 @@ angular.module('okcCoffee.home', ['ngRoute', 'ngSanitize', 'ngCookies'])
 
   var favorites = $cookies.get('favorites');
   var favObject = {};
+  var farDate = '01/01/2020';
+  var cookieOptions = {expires: farDate};
 
-  if (!favorites) {
+  if (!favorites || favorites == undefined) {
     favObject = {
       name: "favorites",
       favoritesList: []
     };
-    $cookies.putObject('favorites', favObject);
+    $cookies.putObject('favorites', favObject, cookieOptions);
   } else {
     favObject = JSON.parse( favorites);
   }
@@ -98,6 +100,7 @@ angular.module('okcCoffee.home', ['ngRoute', 'ngSanitize', 'ngCookies'])
 
     $scope.favorite = function(id) {
 
+      var cookieOptions = {expires: '01/01/2020'};
       var favObject = JSON.parse( $cookies.get('favorites') );
 
       if ( favObject.favoritesList.indexOf(id) > -1 ) {
@@ -109,7 +112,7 @@ angular.module('okcCoffee.home', ['ngRoute', 'ngSanitize', 'ngCookies'])
         favObject.favoritesList.push(id);
       }
 
-      $cookies.putObject('favorites', favObject);
+      $cookies.putObject('favorites', favObject, cookieOptions);
       return;
     };
   }
