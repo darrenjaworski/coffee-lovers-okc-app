@@ -11,17 +11,27 @@
     </div>
     <div class="card-content">
       <div class="card-details">
-        <div class="chip">espresso</div>
-        <div class="chip">Roaster</div>
-        <div class="chip">Drip</div>
-        <div class="chip">Speciality</div>
-        <div class="chip">Hipster</div>
-        <div class="chip">Casual</div>
-        <div class="chip">Keep It Local</div>
+        <div class="chip" ng-if="shop.espresso">Espresso</div>
+        <div class="chip" ng-if="shop.roaster">Roaster</div>
+        <div class="chip" ng-if="shop.drip">Drip</div>
+        <div class="chip" ng-if="shop.speciality">Speciality</div>
+        <div class="chip" ng-if="shop.tea">Tea</div>
+        <div class="chip" ng-if="shop.food">Food</div>
+        <div class="chip" ng-if="shop.hipster">Hipster</div>
+        <div class="chip" ng-if="shop.casual">Casual</div>
+        <div class="chip" ng-if="shop.study_hall">Study Hall</div>
+        <div class="chip" ng-if="shop.noisey">Noisey</div>
+        <div class="chip" ng-if="shop.keep_it_local">Keep It Local</div>
+        <div class="chip" ng-if="shop.city_card">City Card</div>
       </div>
-      <p class="flow-text description">{{shop.description}}</p>
-      <h2>menu</h2>
-      <div ng-bind-html="shop.menu"></div>
+      <div ng-if="shop.description" ng-bind-html="shop.description"></div>
+      <h2 ng-if="shop.menu">menu</h2>
+      <div class="row">
+        <ul class="collection with-header col s6" ng-repeat="menu in shop.menu">
+          <li class="collection-header"><h4>{{menu.menu_title}}</h4></li>
+          <li class="collection-item" ng-repeat="item in menu.menu_items">{{item.menu_item}}<span class="right">${{item.menu_item_price}}</span></li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>

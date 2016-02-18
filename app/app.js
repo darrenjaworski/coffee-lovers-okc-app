@@ -4,6 +4,7 @@
 angular.module('okcCoffee', [
   'ngRoute',
   'ngSanitize',
+  'ngCookies',
   'okcCoffee.navigation',
   'okcCoffee.shop',
   'okcCoffee.blog',

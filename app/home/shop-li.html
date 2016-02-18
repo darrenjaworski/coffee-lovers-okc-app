@@ -1,7 +1,7 @@
 <div class="collapsible-header">
   <div class="left">
-    <i ng-if='shop.espresso' class="material-icons">favorite</i>
-    <i ng-if='!shop.espresso' class="material-icons">favorite_border</i>
+    <i ng-if='shop.favorite' class="material-icons">favorite</i>
+    <i ng-if='!shop.favorite' class="material-icons">favorite_border</i>
   </div>
   <span class="shop-title">{{shop.name}}</span>
   <span class="shop-title-address hide-on-small-only" ng-show="shop.location_street != 'null'"> - {{shop.location_street}}</span>
@@ -15,12 +15,12 @@
   </div>
 </div>
 <div class="collapsible-body">
-  <p>{{shop.short_description}}</p>
+  <div ng-bind-html="shop.short_description"></div>
   <p>
     <a ng-if="shop.location_street !== 'null'" class="waves-effect waves-light btn" ng-click="centerMap(shop.id)">{{shop.location_street}} <i class="material-icons right">place</i></a>
     <a class="waves-effect waves-light btn">
-      <i ng-if='!shop.espresso' ng-click='favorite(shop.id)' class="material-icons">favorite</i>
-      <i ng-if='shop.espresso' ng-click='favorite(shop.id)' class="material-icons">favorite_border</i>
+      <i ng-if='!shop.favorite' ng-click='favorite(shop.id)' class="material-icons">favorite</i>
+      <i ng-if='shop.favorite' ng-click='favorite(shop.id)' class="material-icons">favorite_border</i>
     </a>
   </p>
   <p><a href="#/shop/{{shop.id}}" class="btn-floating btn-large waves-effect waves-light blue"><i class="material-icons">arrow_forward</i></a></p>

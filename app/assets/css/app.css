@@ -180,8 +180,8 @@ body.active-map .main-section {
   cursor: pointer;
 }
 
-.home-key i.active {
-  color: #1976D2;
+.home-key .col.name i.espresso {
+
 }
 
 .shop .row .s6 {

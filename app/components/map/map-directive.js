@@ -45,8 +45,8 @@ angular.module('okcCoffee.map.map-directive', [])
       response.forEach( function(d){
 
         sortShop(d)
-        var popup = '<h5>'+d['name']+'</h5><p>'+ d['location_street'] +'</p>';
-        layerGroups.ids[d.id] = new L.marker( [ d['location_lat'], d['location_long'] ] ).bindPopup(popup);
+        var popup = '<h5>'+d.title.rendered+'</h5><p>'+ d.cfs['location_street'] +'</p>';
+        layerGroups.ids[d.id] = new L.marker( [ d.cfs['location_lat'], d.cfs['location_long'] ] ).bindPopup(popup);
         layerGroups.all.addLayer( layerGroups.ids[d.id] );
         map.addLayer(layerGroups.all);
 
@@ -59,7 +59,7 @@ angular.module('okcCoffee.map.map-directive', [])
       var options = {
         animate: true
       }
-      var leafletID = layerGroups.ids[message + 1]._leaflet_id;
+      var leafletID = layerGroups.ids[message]._leaflet_id;
       var selectedMarker = layerGroups.all._layers[leafletID];
       map.addLayer( selectedMarker );
       map.setView( selectedMarker.getLatLng(), 16, options );
@@ -92,37 +92,37 @@ angular.module('okcCoffee.map.map-directive', [])
     // parameter is shop
     function sortShop(shop) {
 
-      var popup = '<h5>'+shop['name']+'</h5><p>'+ shop['location_street'] +'</p>';
-      var shopMarker = new L.marker( [ shop['location_lat'], shop['location_long'] ] ).bindPopup(popup);
+      var popup = '<h5>'+shop.title.rendered+'</h5><p>'+ shop.cfs['location_street'] +'</p>';
+      var shopMarker = new L.marker( [ shop.cfs['location_lat'], shop.cfs['location_long'] ] ).bindPopup(popup);
 
-      if (shop.espresso) {
+      if (shop.cfs.espresso) {
         layerGroups.espresso.addLayer( shopMarker );
       }
-      if (shop.drip) {
+      if (shop.cfs.drip) {
         layerGroups.drip.addLayer( shopMarker );
       }
-      if (shop.roaster) {
+      if (shop.cfs.roaster) {
         layerGroups.roaster.addLayer( shopMarker );
       }
-      if (shop.speciality) {
+      if (shop.cfs.speciality) {
         layerGroups.speciality.addLayer( shopMarker );
       }
-      if (shop.food) {
+      if (shop.cfs.food) {
         layerGroups.food.addLayer( shopMarker );
       }
-      if (shop.tea) {
+      if (shop.cfs.tea) {
         layerGroups.tea.addLayer( shopMarker );
       }
-      if (shop.study_hall) {
+      if (shop.cfs.study_hall) {
         layerGroups.study_hall.addLayer( shopMarker );
       }
-      if (shop.noisey) {
+      if (shop.cfs.noisey) {
         layerGroups.noisey.addLayer( shopMarker );
       }
-      if (shop.casual) {
+      if (shop.cfs.casual) {
         layerGroups.casual.addLayer( shopMarker );
       }
-      if (shop.hipster) {
+      if (shop.cfs.hipster) {
         layerGroups.hipster.addLayer( shopMarker );
       }
 

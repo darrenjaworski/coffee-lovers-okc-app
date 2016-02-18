@@ -23,7 +23,7 @@ angular.module('okcCoffee.map', [
   var mapData = {};
 
   mapData.getData = function(){
-    return $http.get('./../assets/static-data/yelp.json');
+    return $http.get('http://okccoffee.dev/wp-json/wp/v2/cafes');
   };
 
   return mapData;
