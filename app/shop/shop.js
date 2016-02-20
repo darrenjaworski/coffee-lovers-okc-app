@@ -34,7 +34,7 @@ angular.module('okcCoffee.shop', ['ngRoute', 'ngCookies', 'okcCoffee.map'])
   $http.get(url).then(function(response) {
 
     $scope.shop = response.data;
-    $scope.shop.permalink = window.location;
+    $scope.shop.permalink = window.location.href;
 
     if ( favObject.favoritesList.indexOf($scope.shop.id) > -1 ) {
       $scope.shop.favorite = 0;
