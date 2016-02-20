@@ -197,6 +197,31 @@ body.active-map .main-section {
   margin-left: 2%;
 }
 
+.twitter-color {
+  background: #00aced;
+}
+
+.twitter-color:hover {
+  background: #0093D4;
+}
+
+.facebook-color {
+  background: #3b5998;
+}
+
+.facebook-color:hover {
+  background: #22407F;
+}
+
+.icon {
+	display: inline-block;
+	width: 1.15em;
+	height: 1.15em;
+  top: .2em;
+  position: relative;
+	fill: currentColor;
+}
+
 @media (max-width: 45em) {
   .btn + .btn {
     margin-top: 5px;

@@ -59,10 +59,15 @@ angular.module('okcCoffee.map.map-directive', [])
       var options = {
         animate: true
       }
+
+      if (Object.getOwnPropertyNames(layerGroups.ids).length === 0) {
+        return;
+      }
+
       var leafletID = layerGroups.ids[message]._leaflet_id;
       var selectedMarker = layerGroups.all._layers[leafletID];
       map.addLayer( selectedMarker );
-      map.setView( selectedMarker.getLatLng(), 16, options );
+      map.setView( selectedMarker.getLatLng(), 17, options );
       selectedMarker.openPopup();
 
     });

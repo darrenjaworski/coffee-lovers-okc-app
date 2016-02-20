@@ -99,8 +99,6 @@ angular.module('okcCoffee.home', ['ngRoute', 'ngSanitize', 'ngCookies'])
     };
 
     $scope.favorite = function(id) {
-
-      var cookieOptions = {expires: '01/01/2020'};
       var favObject = JSON.parse( $cookies.get('favorites') );
 
       if ( favObject.favoritesList.indexOf(id) > -1 ) {
@@ -112,7 +110,7 @@ angular.module('okcCoffee.home', ['ngRoute', 'ngSanitize', 'ngCookies'])
         favObject.favoritesList.push(id);
       }
 
-      $cookies.putObject('favorites', favObject, cookieOptions);
+      $cookies.putObject('favorites', favObject, {expires: '01/01/2020'});
       return;
     };
   }

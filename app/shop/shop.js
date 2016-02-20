@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('okcCoffee.shop', ['ngRoute', 'okcCoffee.map'])
+angular.module('okcCoffee.shop', ['ngRoute', 'ngCookies', 'okcCoffee.map'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/shop/:shopID', {
@@ -9,15 +9,38 @@ angular.module('okcCoffee.shop', ['ngRoute', 'okcCoffee.map'])
   });
 }])
 
-.controller('ShopCtrl', ['$scope', '$routeParams', '$http', function($scope, $routeParams, $http) {
-  $scope.$emit('centerMap', $routeParams.shopID);
+.controller('ShopCtrl', ['$scope', '$routeParams', '$http', '$cookies', function($scope, $routeParams, $http, $cookies) {
   $scope.centerMap = function(id){
     $scope.$emit('centerMap', $routeParams.shopID);
     $('body').toggleClass('active-map');
   };
   var url = 'http://coffeeapi.darrenjaworski.com/wp-json/wp/v2/cafes/' + $routeParams.shopID;
+
+  var favorites = $cookies.get('favorites');
+  var favObject = {};
+  var farDate = '01/01/2020';
+  var cookieOptions = {expires: farDate};
+
+  if (!favorites || favorites == undefined) {
+    favObject = {
+      name: "favorites",
+      favoritesList: []
+    };
+    $cookies.putObject('favorites', favObject, cookieOptions);
+  } else {
+    favObject = JSON.parse( favorites);
+  }
+
   $http.get(url).then(function(response) {
+
     $scope.shop = response.data;
+    $scope.shop.permalink = window.location;
+
+    if ( favObject.favoritesList.indexOf($scope.shop.id) > -1 ) {
+      $scope.shop.favorite = 0;
+    } else {
+      $scope.shop.favorite = 1;
+    }
 
     $scope.shop.name = $scope.shop.title.rendered;
     $scope.shop.short_description = $scope.shop.cfs.short_description;
@@ -43,4 +66,22 @@ angular.module('okcCoffee.shop', ['ngRoute', 'okcCoffee.map'])
     $scope.shop.city_card = ~~$scope.shop.cfs.city_card;
 
   });
+
+  $scope.favorite = function(id) {
+    var favObject = JSON.parse( $cookies.get('favorites') );
+
+    if ( favObject.favoritesList.indexOf(id) > -1 ) {
+      var index = favObject.favoritesList.indexOf(id);
+      this.$parent.shop.favorite = 0;
+      favObject.favoritesList.splice( index , index + 1 );
+    } else {
+      this.$parent.shop.favorite = 1;
+      favObject.favoritesList.push(id);
+    }
+
+    $cookies.putObject('favorites', favObject, {expires: '01/01/2020'});
+    return;
+  };
+
+  $scope.$emit('centerMap', $routeParams.shopID);
 }]);
