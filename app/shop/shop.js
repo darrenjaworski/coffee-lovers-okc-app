@@ -34,6 +34,13 @@ angular.module('okcCoffee.shop', ['ngRoute', 'ngCookies', 'okcCoffee.map'])
   $http.get(url).then(function(response) {
 
     $scope.shop = response.data;
+    var mediaURL = 'http://coffeeapi.darrenjaworski.com/wp-json/wp/v2/media/' + $scope.shop.cfs.hero_image;
+    $http.get(mediaURL).then(function(response){
+      console.log(response)
+      //medium
+      //$scope.shop.hero_image = response.data.media_details.sizes.medium.source_url;
+      $scope.shop.hero_image = response.data.source_url;
+    });
     $scope.shop.permalink = window.location.href;
 
     if ( favObject.favoritesList.indexOf($scope.shop.id) > -1 ) {

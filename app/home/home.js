@@ -56,7 +56,7 @@ angular.module('okcCoffee.home', [
       d.food = ~~d.cfs.food;
 
       d.qualities = [''];
-      if (d.cfs.espresso) {
+      if (d.espresso) {
         d.qualities.push('espresso')
       }
       if (d.speciality) {

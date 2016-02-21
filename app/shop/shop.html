@@ -30,10 +30,10 @@
       <!-- <li><a class="btn-floating teal"><i class="material-icons">edit</i></a></li> -->
     </ul>
   </div>
-  <h1>{{shop.name}}</h1>
+  <h1 ng-bind-html="shop.name"></h1>
   <div class="card">
     <div class="card-image">
-      <img src="/assets/images/placeholder.jpg">
+      <img src="{{shop.hero_image}}">
       <div class="card-buttons">
         <a class="waves-effect waves-light btn" ng-click="centerMap(shop.id)">{{shop.location_street}} <i class="material-icons right">place</i></a>
         <a class="waves-effect waves-light btn">

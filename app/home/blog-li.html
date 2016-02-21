@@ -1,4 +1,4 @@
-<div class="collapsible-header" ng-class="{'active': $first}"><i class="material-icons">edit</i>{{blog.title.rendered}}<span class="right published">{{blog.date | date : 'MMM, d yyyy'}}</span></div>
+<div class="collapsible-header active"><i class="material-icons">edit</i>{{blog.title.rendered}}<span class="right published">{{blog.date | date : 'MMM, d yyyy'}}</span></div>
 <div class="collapsible-body">
   <p class="author">Words by <a href="https://twitter.com/{{blog.twitter}}">{{blog.author}}</a>.</p>
   <div ng-bind-html="blog.content.rendered"></div>
