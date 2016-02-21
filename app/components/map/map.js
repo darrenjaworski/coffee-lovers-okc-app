@@ -16,16 +16,4 @@ angular.module('okcCoffee.map', [
     $('.map-controls input').prop('checked', false);
     $scope.$emit('resetMap');
   };
-}])
-
-.factory('mapData', ['$http', function($http){
-
-  var mapData = {};
-
-  mapData.getData = function(){
-    return $http.get('http://okccoffee.dev/wp-json/wp/v2/cafes');
-  };
-
-  return mapData;
-
 }]);

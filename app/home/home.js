@@ -1,6 +1,10 @@
 'use strict';
 
-angular.module('okcCoffee.home', ['ngRoute', 'ngSanitize', 'ngCookies'])
+angular.module('okcCoffee.home', [
+  'ngRoute',
+  'ngSanitize',
+  'ngCookies'
+])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/', {
@@ -9,7 +13,7 @@ angular.module('okcCoffee.home', ['ngRoute', 'ngSanitize', 'ngCookies'])
   });
 }])
 
-.controller('HomeCtrl', ['$scope', '$http', '$cookies', function($scope, $http, $cookies) {
+.controller('HomeCtrl', ['$scope', '$http', '$cookies', 'cafeData', function($scope, $http, $cookies, cafeData) {
 
   var favorites = $cookies.get('favorites');
   var favObject = {};
@@ -31,15 +35,16 @@ angular.module('okcCoffee.home', ['ngRoute', 'ngSanitize', 'ngCookies'])
   $scope.sortProp = 'name';
   $scope.sortReverse = false;
   $scope.filterProp = '';
-  $http.get('http://coffeeapi.darrenjaworski.com/wp-json/wp/v2/cafes').then(function(response) {
-    $scope.shops = response.data;
+  $scope.shops = [];
+  cafeData.getData().then(function(response){
+    $scope.shops = response;
     $scope.shops.forEach(function(d){
 
       if ( favObject.favoritesList.indexOf(d.id) > -1 ) {
         d.favorite = 1;
       }
 
-      d.short_description = d.cfs.short_description;
+      d.short_description = d.cfs.short_description ? d.cfs.short_description : "<p>This is placeholder text.</p>";
       d.location_street = d.cfs.location_street;
       d.name = d.title.rendered;
 
@@ -50,7 +55,7 @@ angular.module('okcCoffee.home', ['ngRoute', 'ngSanitize', 'ngCookies'])
       d.tea = ~~d.cfs.tea;
       d.food = ~~d.cfs.food;
 
-      d.qualities = [];
+      d.qualities = [''];
       if (d.cfs.espresso) {
         d.qualities.push('espresso')
       }
@@ -69,6 +74,7 @@ angular.module('okcCoffee.home', ['ngRoute', 'ngSanitize', 'ngCookies'])
       if (d.food) {
         d.qualities.push('food')
       }
+
     })
   });
 

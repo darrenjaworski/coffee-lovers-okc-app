@@ -3,7 +3,7 @@
     <i ng-if='shop.favorite' class="material-icons">favorite</i>
     <i ng-if='!shop.favorite' class="material-icons">favorite_border</i>
   </div>
-  <span class="shop-title">{{shop.name}}</span>
+  <span class="shop-title" ng-bind-html="shop.name"></span>
   <span class="shop-title-address hide-on-small-only" ng-show="shop.location_street != 'null'"> - {{shop.location_street}}</span>
   <div class="right">
     <span ng-if='shop.espresso' class="espresso-icon green lighten-1" data-position="top" data-delay="50" data-tooltip="espresso">E</span>

@@ -2,7 +2,7 @@
 
 angular.module('okcCoffee.map.map-directive', [])
 
-.directive('mapLeaflet', ['mapData', function(mapData) {
+.directive('mapLeaflet', ['cafeData', function(cafeData) {
   function link(scope, elm, attrs) {
 
     var zoom = 12;
@@ -41,7 +41,7 @@ angular.module('okcCoffee.map.map-directive', [])
     };
 
     // populate map with markers and data
-    mapData.getData().success( function(response){
+    cafeData.getData().then(function(response){
       response.forEach( function(d){
 
         sortShop(d)
