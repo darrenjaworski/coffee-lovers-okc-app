@@ -21,8 +21,8 @@ angular.module('okcCoffee', [
   var cafeData = {};
 
   cafeData.getData = function(){
-    var data1 = $http.get('http://okccoffee.dev/wp-json/wp/v2/cafes?per_page=100');
-    var data2 = $http.get('http://okccoffee.dev/wp-json/wp/v2/cafes?per_page=100&offset=100');
+    var data1 = $http.get('http://coffeeapi.darrenjaworski.com/wp-json/wp/v2/cafes?per_page=100');
+    var data2 = $http.get('http://coffeeapi.darrenjaworski.com/wp-json/wp/v2/cafes?per_page=100&offset=100');
     var test;
     var result = $q.all([
       data1,
