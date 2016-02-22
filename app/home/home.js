@@ -44,7 +44,7 @@ angular.module('okcCoffee.home', [
         d.favorite = 1;
       }
 
-      d.short_description = d.cfs.short_description ? d.cfs.short_description : "<p>This is placeholder text.</p>";
+      d.short_description = d.cfs.short_description ? d.cfs.short_description : undefined;
       d.location_street = d.cfs.location_street;
       d.name = d.title.rendered;
 

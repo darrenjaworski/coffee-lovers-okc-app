@@ -15,7 +15,7 @@
   </div>
 </div>
 <div class="collapsible-body">
-  <div ng-bind-html="shop.short_description"></div>
+  <div ng-if="shop.short_description" ng-bind-html="shop.short_description"></div>
   <p>
     <a ng-if="shop.location_street !== 'null'" class="waves-effect waves-light btn" ng-click="centerMap(shop.id)">{{shop.location_street}} <i class="material-icons right">place</i></a>
     <a class="waves-effect waves-light btn">
